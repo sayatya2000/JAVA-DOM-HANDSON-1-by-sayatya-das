@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM QUESTIONS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>DOM QUESTIONS</h1>  
+    <h3>1.Write the code to access element which is having id as "text"</h3>
+    <h4>Ans.</h4>
+    <pre>
+        let element = document.getElementById("text");
+    </pre>
+    <h4>Explanation:Here, we use the `getElementById` method provided by the `document` object to get the element with the id "text". The returned value is assigned to the `element` variable, which can then be used to manipulate the element as needed.
+        In summary, the `getElementById` method allows us to access an element in the HTML document using its unique id attribute, and then manipulate it using JavaScript.</h4>
+    <br>
+    <h3>2.Write the code to access element which is having tag as "h1"</h3>
+    <h4>Ans.</h4>
+    <pre>
+        let element = document.querySelector("h1");
+    </pre>
+    <h4>Explanation:Here, we use the `querySelector` method provided by the `document` object to get the first `h1` element in the HTML document. The returned value is assigned to the `element` variable, which can then be used to manipulate the element as needed.
+        In summary, the `querySelector` method allows us to access an element in the HTML document using its tag name or any other valid CSS selector, and then manipulate it using JavaScript.</h4>
+    <br>
+    <h3>3.Write the code to access element which is having class as "box"</h3>    
+    <h4>Ans.</h4>
+    <pre>let element = document.querySelector(".box");</pre>
+    <h4>Here, we use the `querySelector` method provided by the `document` object to get the first element with the class "box" in the HTML document. The period (".") before "box" indicates that we are searching for a class, not a tag name. The returned value is assigned to the `element` variable, which can then be used to manipulate the element as needed.
+        In summary, the `querySelector` method with a class selector (indicated by a leading period) allows us to access an element in the HTML document using its class attribute, and then manipulate it using JavaScript.</h4>
+    <br>
+    <h3>4."Hello" 
+
+        Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</h3>    
+    <h4>Ans.</h4>    
+    <pre>
+        let element = document.querySelector("h1");
+        element.textContent = "Hello World";
+    </pre>
+    <h4>Explanation:Here, we use the `querySelector` method provided by the `document` object to get the `h1` element in the HTML document. We then access the `textContent` property of the `element` variable, and set it to "Hello World" to change the text content of the `h1` element.
+        In summary, by accessing the `textContent` property of an element using DOM functions, we can change the text content of that element in the HTML document using JavaScript.</h4>
+    <br>
+    <h3>5.Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>   
+    <h4>Ans.</h4> 
+    <pre>
+    html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Replace Text Example</title>
+    </head>
+    <body>
+    <p id="text">Hello world</p>
+    <button onclick="replaceText()">Replace Text</button>
+    <script>
+      function replaceText() {
+        document.getElementById("text").textContent = "Welcome to Elevation academy";
+      }
+    </script>
+    </body>
+    </html>
+
+    </pre>
+    <h4>Explanation:In the HTML code, we have a paragraph element with the id "text" that displays the initial text content of "Hello world". We also have a button element with an `onclick` attribute that calls the `replaceText` function when clicked.
+        In the JavaScript code, we define the `replaceText` function that uses the `getElementById` method to get the `text` element, and then sets its `textContent` property to "Welcome to Elevation academy" to replace the initial text content with the new text.
+        In summary, by defining a function that uses DOM functions to change the text content of an element, and attaching that function to a button's `onclick` attribute, we can replace the page content with new text when the button is clicked.</h4>
+    <br>
+    <h3>6. "Hello" 
+
+        Add one style attribute and give text color as red and id attribute and give the id value as "heading" in the above given h1 tag using DOM functions"</h3>   
+    <h4>Ans.</h4>     
+    <pre>
+        let element = document.querySelector("h1");
+        element.style.color = "red";
+        element.id = "heading";
+    </pre>
+    <h4>Explanation:Here, we use the querySelector method provided by the document object to get the h1 element in the HTML document. We then access the style property of the element variable, and set its color property to "red" to change the text color of the h1 element. We also set the id property of the element variable to "heading" to give it an id attribute with the value "heading".
+        In summary, by accessing the style and id properties of an element using DOM functions, we can add a style attribute and id attribute to that element in the HTML document using JavaScript.</h4>
+    <br>
+    <h3>7.Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h3>    
+    <h4>Ans.</h4>
+    <pre>
+        <!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Example</title>
+    <style>
+      #card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .card {
+        width: 200px;
+        height: 300px;
+        background-color: #F0F0F0;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card-container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+    </div>
+    <button onclick="changeFlexDirection()">Change Flex direction</button>
+    <script>
+      function changeFlexDirection() {
+        let container = document.getElementById("card-container");
+        if (container.style.flexDirection === "row") {
+          container.style.flexDirection = "column";
+        } else {
+          container.style.flexDirection = "row";
+        }
+      }
+    </script>
+  </body>
+</html>
+    </pre>
+    <h4>Explanation:In the HTML code, we have a `div` element with the id "card-container" that contains three `div` elements with the class "card", which represent the cards. We use CSS flex properties to arrange the cards in a row with equal spacing between them. We also have a button element with an `onclick` attribute that calls the `changeFlexDirection` function when clicked.
+        In the CSS code, we define the styles for the card container and the cards themselves, including their dimensions, background color, and margins.
+        In the JavaScript code, we define the `changeFlexDirection` function that uses the `getElementById` method to get the `card-container` element, and then toggles the `flex-direction` property between "row" and "column" each time the button is clicked, to change the direction in which the cards are arranged.
+        In summary, by using CSS flex properties to arrange elements in a row or column, and by defining a function that uses DOM functions to change the `flex-direction` property of an element, we can change the arrangement of elements on an HTML page when a button is clicked.</h4>
+        <br>
+        <h3>8.What’s the difference between window vs document?</h3>
+        <h4>Ans.</h4>
+        <h4>In JavaScript, `window` and `document` are both important objects that are used to interact with the web page.
+            `window` refers to the entire browser window that contains the document, including the address bar, tabs, and other UI elements. It is the top-level object in the browser's object model and provides global methods and properties that can be used to manipulate the window itself and its contents.
+            On the other hand, `document` refers to the web page that is loaded in the browser window. It is a child object of the `window` object and provides methods and properties that can be used to manipulate the elements and content within the document, such as creating or modifying elements, handling events, or manipulating the document's structure.
+            In summary, `window` is the top-level object that represents the entire browser window, while `document` is a child object of `window` that represents the web page loaded in the browser and provides methods to manipulate its contents.</h4>
+    <br>
+    <h3>9.Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h3>
+    <h4>Ans.</h4>
+    <pre>
+        function updateTime() {
+            let today = new Date();
+            let hours = today.getHours().toString().padStart(2, '0');
+            let minutes = today.getMinutes().toString().padStart(2, '0');
+            let seconds = today.getSeconds().toString().padStart(2, '0');
+            let timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+          }
+          setInterval(updateTime, 1000);
+    </pre>
+    <h4>Explanation:In this code, we define a function called `updateTime` that gets the current time using the `Date` object and formats it as a string in HH:MM:SS format. We then use the `getElementById` method to select an HTML element with an `id` of `clock` and update its `textContent` property to the current time string.
+        Finally, we use the `setInterval` method to call the `updateTime` function every second (1000 milliseconds) to update the clock with the current time.
+        In summary, we use the `Date` object to get the current time, format it as a string in HH:MM:SS format, and update an HTML element's `textContent` property with the current time string every second using `setInterval`.</h4>
+    <br>
+    <h3>10.Make The DOM GAME.</h3>    
+    <h4>Ans.</h4>
+    <a href="./index2.html">THE DOM GAME LINK</a>
+</body>
+<script src="./script.js"></script>
+</html>
